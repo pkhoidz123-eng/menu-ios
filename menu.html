@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limited Free Fire</title>
+
+<style>
+:root{
+  --glass: rgba(255,255,255,0.18);
+}
+
+*{
+  box-sizing:border-box;
+  font-family:-apple-system, BlinkMacSystemFont;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#000,#111,#000);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* loading */
+#loading{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  background:#000;
+  z-index:10;
+}
+
+/* screen */
+.screen{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background:rgba(0,0,0,0.55);
+}
+
+/* card */
+.card{
+  width:85%;
+  padding:24px;
+  border-radius:22px;
+  background:var(--glass);
+  box-shadow:0 0 40px rgba(0,0,0,.5);
+  animation:zoom .35s ease;
+}
+
+h2{
+  margin:0 0 12px;
+  text-align:center;
+}
+
+input,button{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+}
+
+input{
+  background:rgba(255,255,255,.85);
+}
+
+button{
+  background:#fff;
+  font-weight:600;
+}
+
+@keyframes zoom{
+  from{opacity:0;transform:scale(.9)}
+  to{opacity:1;transform:scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading">🔒 Limited Free Fire</div>
+
+<div class="screen" id="lock">
+  <div class="card">
+    <h2>🔑 Nhập mật khẩu</h2>
+    <input id="password" type="password" placeholder="Mật khẩu">
+    <button onclick="unlock()">MỞ MENU</button>
+  </div>
+</div>
+
+<div class="screen" id="menu">
+  <div class="card">
+    <h2>🔥 MENU FREE FIRE</h2>
+    <button onclick="info()">🧾 Limited User</button>
+    <button onclick="alert('⚙️ Đang phát triển')">⚙️ Chức năng</button>
+    <button onclick="lock()">🔒 Khóa lại</button>
+  </div>
+</div>
+
+<audio id="tap" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+
+<script>
+const PASS = "pkhoino1vnfilelimited"
+
+setTimeout(()=>{
+  loading.style.display="none"
+  lock.style.display="flex"
+},1500)
+
+function clickSound(){ tap.play() }
+
+function unlock(){
+  clickSound()
+  if(password.value === PASS){
+    lock.style.display="none"
+    menu.style.display="flex"
+  }else{
+    alert("❌ Sai mật khẩu")
+  }
+}
+
+function lock(){
+  clickSound()
+  menu.style.display="none"
+  password.value=""
+  lock.style.display="flex"
+}
+
+function info(){
+  clickSound()
+  alert("👤 LIMITED USER\nAccess Restricted")
+}
+</script>
+
+</body>
+</html>
