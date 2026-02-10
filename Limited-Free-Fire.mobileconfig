@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.limited.freefire.app</string>
+  <key>PayloadUUID</key>
+  <string>AAAABBBB-CCCC-DDDD-1111-222233334444</string>
+  <key>PayloadDisplayName</key>
+  <string>Limited Free Fire</string>
+
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.limited.freefire.webclip</string>
+      <key>PayloadUUID</key>
+      <string>55556666-7777-8888-9999-0000AAAAFFFF</string>
+
+      <key>Label</key>
+      <string>Limited Free Fire</string>
+
+      <!-- ĐỔI USERNAME GITHUB -->
+      <key>URL</key>
+      <string>https://pkhoidz123.github.io/limited-freefire/menu.html</string>
+
+      <key>FullScreen</key>
+      <true/>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Precomposed</key>
+      <true/>
+    </dict>
+  </array>
+
+</dict>
+</plist>
